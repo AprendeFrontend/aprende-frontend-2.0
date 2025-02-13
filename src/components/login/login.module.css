@@ -1,0 +1,32 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-left: auto;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: 2px solid var(--primary-500);
+  background-color: var(--neutral-900);
+  box-shadow: 2px 2px 6px var(--primary-400);
+  cursor: pointer;
+  transition: background-color 0.25s, scale 0.25s;
+  user-select: none;
+}
+
+.login {
+  border: none;
+  background-color: transparent;
+  font-weight: var(--font-bold);
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .login-container:hover {
+    background-color: var(--primary-500);
+  }
+}
+
+.login-container:active {
+  scale: 0.95;
+}

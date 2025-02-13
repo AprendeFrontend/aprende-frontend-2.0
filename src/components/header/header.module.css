@@ -1,0 +1,7 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding-inline: 5rem;
+  background-color: var(--neutral-900);
+  height: 8.625rem;
+}

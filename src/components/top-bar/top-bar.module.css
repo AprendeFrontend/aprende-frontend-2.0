@@ -1,0 +1,17 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: aliceblue;
+}
+
+.logo {
+  width: 50px;
+}
