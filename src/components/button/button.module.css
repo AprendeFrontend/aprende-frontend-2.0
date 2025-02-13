@@ -1,0 +1,25 @@
+.button {
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: transparent;
+  color: var(--secondary-100);
+  font-size: 1rem;
+  width: max-content;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.05s;
+}
+
+@media screen and (width>1024px) {
+  .button {
+    padding: 1rem 1.25rem;
+    font-size: 1.25rem;
+    margin-inline: 0;
+  }
+}
+
+.button-primary {
+  background-color: var(--primary-500);
+}

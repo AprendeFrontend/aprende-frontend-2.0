@@ -1,16 +1,40 @@
 'use client';
-import { signIn } from 'next-auth/react';
+import { login } from '@/utils/auth';
+import { signOut, useSession } from 'next-auth/react';
+import { useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
+import styles from './login.module.css';
 
 const LoginButton = () => {
-  return <button onClick={login}>Iniciar Sesión</button>;
-};
+  const { data: session, status } = useSession();
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
-const login = async () => {
-  const result = await signIn('github', {
-    callbackUrl: '/',
-    redirect: false
-  });
-  console.log(result);
+  if (status === 'loading') return <p className={styles['loading']}>Cargando...</p>;
+
+  const user = session?.user;
+
+  if (session) {
+    return (
+      <div className={styles['user-info']}>
+        <img className={styles['user-image']} src={user.image} alt='imagen de usuario' onClick={() => setShowUserMenu(!showUserMenu)} />
+
+        {showUserMenu && (
+          <div className={styles['user-menu']}>
+            <button onClick={signOut}>Cerrar Sesión</button>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles['login-container']}>
+      <FaGithub />
+      <button className={styles['login']} onClick={login}>
+        Iniciar Sesión
+      </button>
+    </div>
+  );
 };
 
 export default LoginButton;

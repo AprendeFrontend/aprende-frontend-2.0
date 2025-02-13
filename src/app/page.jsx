@@ -1,16 +1,33 @@
-'use client';
+import CardInfo from '@/components/card-info/CardInfo';
+import Feedback from '@/components/feedback/Feedback';
 import Header from '@/components/header/Header';
-import { useSession } from 'next-auth/react';
-import styles from './page.module.css';
+import Hero from '@/components/hero/Hero';
 
 const HomePage = () => {
-  const { data: session, status } = useSession();
-
   return (
-    <div className={styles.page}>
+    <>
       <Header />
-      {status === 'loading' ? <p>Cargando...</p> : session ? <p>Bienvenido, {session.user.name}!</p> : <p>No has iniciado sesión.</p>}
-    </div>
+      <Hero
+        title='Aprende Frontend Paso a Paso'
+        text='Aprender a programar es más efectivo cuando sigues un camino claro y estructurado. Aquí encontrarás retos diseñados para guiarte paso a paso, desde los conceptos básicos hasta proyectos avanzados que pondrán a prueba tus habilidades.'
+      />
+      <Feedback />
+      <CardInfo
+        title='Construye Proyectos Reales'
+        text='Aprender es importante, pero construir es lo que marca la diferencia. Aquí encontrarás proyectos diseñados para simular situaciones reales'
+        linkText='Ver desafíos de CSS'
+        linkHref='/challenges/css'
+        image='/images/default-image.png'
+      />
+      <CardInfo
+        title='Desarrolla habilidades técnicas'
+        text='Aquí no se trata de hacer ejercicios sin sentido. Cada reto tiene un propósito claro, preparándote para resolver problemas reales y construir proyectos que realmente importen.'
+        linkText='Ver desafíos de JavaScript'
+        linkHref='/challenges/javascript'
+        image='/images/default-image.png'
+        reverse
+      />
+    </>
   );
 };
 

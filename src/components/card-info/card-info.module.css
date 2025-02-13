@@ -1,0 +1,52 @@
+.card-info {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  margin: 0 5rem 5rem;
+  padding: 5rem 2.5rem;
+  border-radius: 1rem;
+  background-color: var(--neutral-800);
+  color: var(--secondary-100);
+}
+
+.card-info-reverse {
+  flex-direction: row-reverse;
+}
+
+.card-info-content {
+}
+
+.card-info-title {
+  font-size: 3.8125rem;
+}
+
+.card-info-text {
+  font-size: 1.5625rem;
+}
+
+.card-info-link {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: 50px;
+  gap: 1rem;
+  color: var(--primary-300);
+  font-weight: var(--font-bold);
+  /* border: 1px solid var(--primary-300);
+  border-radius: 1rem;
+  padding-inline: 1rem; */
+  transition: gap 0.3s;
+}
+
+.card-info-link-text {
+  border-bottom: 1px solid var(--primary-300);
+}
+
+@media (hover: hover) {
+  .card-info-link:hover {
+    gap: 1.5rem;
+  }
+}
+
+.card-info-image {
+}

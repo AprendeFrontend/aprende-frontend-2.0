@@ -3,6 +3,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+  border-radius: 0.5rem;
   margin-left: auto;
   font-size: 1.25rem;
   font-weight: bold;
@@ -29,4 +30,26 @@
 
 .login-container:active {
   scale: 0.95;
+}
+
+.loading {
+  margin-left: auto;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.user-image {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.user-menu {
+  position: absolute;
+  top: 100px;
 }

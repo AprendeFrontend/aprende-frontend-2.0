@@ -1,0 +1,36 @@
+.hero {
+  position: relative;
+  padding-top: 17.5rem;
+  text-align: center;
+  padding-inline: 11rem;
+  height: 58.75rem;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/coding.jpg);
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.25;
+}
+
+.hero-title {
+  margin-top: 0;
+  font-size: 6rem;
+  font-weight: var(--font-bold);
+}
+
+.hero-text {
+  font-size: 1.5625rem;
+}
+
+@media screen and (width>1400px) {
+  .hero-text {
+    /* max-width: 1600px; */
+  }
+}

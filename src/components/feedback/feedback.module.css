@@ -1,0 +1,22 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  text-align: center;
+  padding: 5rem;
+}
+
+.feedback-title {
+  color: var(--primary-300);
+  font-size: 4.75rem;
+  margin-block: 0;
+}
+
+.feedback-text {
+  color: var(--secondary-100);
+  font-size: 1.5625rem;
+  max-width: 920px;
+  margin: 0 auto;
+  font-weight: var(--font-bold);
+}
