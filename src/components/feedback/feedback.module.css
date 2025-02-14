@@ -19,4 +19,5 @@
   max-width: 920px;
   margin: 0 auto;
   font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
 }

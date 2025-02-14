@@ -43,7 +43,9 @@
   --font-bold: 700;
 }
 
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -70,7 +72,12 @@ body {
   background-color: var(--neutral-900);
 }
 
+.loading {
+  height: 50px;
+}
 .link-primary {
+  display: inline-block;
+  height: 50px;
   padding: 0.75rem;
   border-radius: 0.5rem;
   color: var(--secondary-100);

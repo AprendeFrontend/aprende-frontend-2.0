@@ -8,7 +8,7 @@ const DynamicButton = () => {
   const { data: session, status } = useSession();
   return (
     <>
-      {status === 'loading' && <p>Cargando...</p>}
+      {status === 'loading' && <span className='loading'>Cargando...</span>}
       {!session && status !== 'loading' && (
         <Button className='button-primary' onClick={login}>
           Accede Ahora
