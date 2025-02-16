@@ -1,0 +1,232 @@
+/* ANIMACIÓN DEL CÓDIGO CSS - EMPIEZA DESPUÉS DE QUE DESAPAREZCA EL HTML */
+.coding-css-line-1,
+.coding-css-line-2,
+.coding-css-line-3,
+.coding-css-line-4,
+.coding-css-line-5,
+.coding-css-line-6,
+.coding-css-line-7,
+.coding-css-line-8,
+.coding-css-line-9,
+.coding-css-line-10,
+.coding-css-line-11,
+.coding-css-line-12,
+.coding-css-line-13 {
+  position: absolute;
+  left: 15px;
+  width: 0;
+  height: 10px;
+  border-radius: 0.25rem;
+  box-shadow: none;
+}
+
+/* Animación de cada línea con delay ajustado para que inicie después de la desaparición del HTML */
+.coding-css-line-1 {
+  --start-delay: 0s;
+  --end-delay: 6s;
+  top: 50px;
+  background-color: rgb(0, 102, 255);
+  animation: coding-css-writing-line-1 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-2 {
+  --start-delay: ;
+  --end-delay: ;
+  top: 70px;
+  background-color: rgb(6, 87, 209);
+  animation: coding-css-writing-line-2 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-3 {
+  top: 90px;
+  background-color: rgb(0, 140, 255);
+  animation: coding-css-writing-line-3 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-4 {
+  top: 110px;
+  background-color: rgb(10, 75, 230);
+  animation: coding-css-writing-line-4 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: 1.5s, 6s;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-5 {
+  top: 130px;
+  background-color: rgb(10, 120, 255);
+  animation: coding-css-writing-line-5 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-6 {
+  top: 150px;
+  background-color: rgb(15, 60, 200);
+  animation: coding-css-writing-line-6 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-7 {
+  top: 170px;
+  background-color: rgb(20, 90, 255);
+  animation: coding-css-writing-line-7 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-8 {
+  top: 190px;
+  background-color: rgb(25, 80, 230);
+  animation: coding-css-writing-line-8 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-9 {
+  top: 210px;
+  background-color: rgb(30, 110, 255);
+  animation: coding-css-writing-line-9 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-10 {
+  top: 230px;
+  background-color: rgb(35, 95, 210);
+  animation: coding-css-writing-line-10 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-11 {
+  top: 250px;
+  background-color: rgb(40, 80, 220);
+  animation: coding-css-writing-line-11 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+.coding-css-line-12 {
+  top: 270px;
+  background-color: rgb(45, 100, 240);
+  animation: coding-css-writing-line-12 0.5s linear forwards, coding-css-fade-out 0.5s linear forwards;
+  animation-delay: var(--start-delay), var(--end-delay);
+}
+
+/* Keyframes para la animación de las líneas CSS */
+@keyframes coding-css-writing-line-1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes coding-css-writing-line-2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+
+@keyframes coding-css-writing-line-3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes coding-css-writing-line-4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes coding-css-writing-line-5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 55%;
+  }
+}
+
+@keyframes coding-css-writing-line-6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+
+@keyframes coding-css-writing-line-7 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+@keyframes coding-css-writing-line-8 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+
+@keyframes coding-css-writing-line-9 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 89%;
+  }
+}
+
+@keyframes coding-css-writing-line-10 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 68%;
+  }
+}
+
+@keyframes coding-css-writing-line-11 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+
+@keyframes coding-css-writing-line-12 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 79%;
+  }
+}
+
+@keyframes coding-css-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
