@@ -20,3 +20,52 @@
 }
 
 /* DINO - FLAPPY - BLOCK BRICK - PONG -  BOMBERMAN - https://codepen.io/sylvaingarnot/pen/jqveXe*/
+
+.project-asteroids {
+}
+
+.player-asteroids {
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  width: 10px;
+  height: 10px;
+  background-color: #ffd700;
+  animation: asteroids-animation 6s linear infinite;
+}
+
+@keyframes asteroids-animation {
+  0% {
+    translate: 30px 30px; /* Posición inicial */
+  }
+
+  20% {
+    translate: 50px 180px; /* Baja suavemente */
+  }
+
+  40% {
+    translate: 60px 100px; /* Sube de nuevo pero sin ser brusco */
+  }
+
+  60% {
+    translate: 70px 5px; /* Sube con fluidez */
+  }
+
+  80% {
+    translate: 90px 190px; /* Baja hasta casi el fondo */
+  }
+
+  100% {
+    translate: 30px 30px; /* Vuelve a la posición inicial */
+  }
+}
+
+.player-asteroids::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 5px;
+  height: 2px;
+  background-color: #fff;
+}

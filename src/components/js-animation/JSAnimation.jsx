@@ -8,8 +8,13 @@ const JSAnimation = () => {
   return (
     <>
       <div className={styles['animation-container']}>
-        <div className={styles['screen']}></div>
-        <div className={styles['project-dino-box']}></div>
+        <div className={styles['screen']}>
+          <div className={styles['project-asteroids']}>
+            <div className={styles['player-asteroids']}></div>
+            <div className={styles['enemys-asteroids']}></div>
+          </div>
+        </div>
+
         <Coding showHtmlAnimation={showHtmlAnimation} setShowHtmlAnimation={setShowHtmlAnimation} left />
       </div>
     </>
