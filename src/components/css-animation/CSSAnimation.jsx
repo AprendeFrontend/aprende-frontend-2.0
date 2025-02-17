@@ -4,6 +4,7 @@ import CodingCSS from '../coding-css/CodingCSS';
 import CodingHTML from '../coding-html/CodingHTML';
 import ProjectAnimation from '../project-animation/ProjectAnimation';
 import styles from './css-animation.module.css';
+import Coding from '../coding/Coding';
 
 const CSSAnimation = () => {
   const [showHtmlAnimation, setShowHtmlAnimation] = useState(true);
@@ -12,11 +13,17 @@ const CSSAnimation = () => {
 
   useEffect(() => {
     if (projectAnimationRef.current) {
-      projectAnimationRef.current.addEventListener('animationend', () => handleProjectAnimationEnd(setShowProjectAnimation));
+      projectAnimationRef.current.addEventListener('animationend', () =>
+        handleProjectAnimationEnd(setShowProjectAnimation)
+      );
     }
 
-    return () => projectAnimationRef.current.removeEventListener('animationend', () => handleProjectAnimationEnd(setShowProjectAnimation));
+    return () =>
+      projectAnimationRef.current.removeEventListener('animationend', () =>
+        handleProjectAnimationEnd(setShowProjectAnimation)
+      );
   }, []);
+
   return (
     <div className={styles['animation-container']}>
       {!showProjectAnimation && (
@@ -35,23 +42,13 @@ const CSSAnimation = () => {
         </div>
       )}
       {showProjectAnimation && <ProjectAnimation />}
-      <div className={styles['coding']}>
-        <div className={styles['coding-header']}>
-          <div className={styles['coding-ball-1']}></div>
-          <div className={styles['coding-ball-2']}></div>
-          <div className={styles['coding-ball-3']}></div>
-          {/* HTML ANIMATION */}
-          {showHtmlAnimation && <CodingHTML setShowHtmlAnimation={setShowHtmlAnimation} />}
-          {/* CSS ANIMATION */}
-          {!showHtmlAnimation && <CodingCSS setShowHtmlAnimation={setShowHtmlAnimation} />}
-        </div>
-      </div>
+
+      <Coding showHtmlAnimation={showHtmlAnimation} setShowHtmlAnimation={setShowHtmlAnimation} />
     </div>
   );
 };
 
 const handleProjectAnimationEnd = setShowProjectAnimation => {
-  console.log('END');
   setShowProjectAnimation(true);
 };
 

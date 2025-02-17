@@ -17,14 +17,14 @@ const HomePage = () => {
         text='Aprender es importante, pero construir es lo que marca la diferencia. Aquí encontrarás proyectos diseñados para simular situaciones reales'
         linkText='Ver desafíos de CSS'
         linkHref='/challenges/css'
-        image='/images/default-image.png'
+        animation='CSS'
       />
       <CardInfo
         title='Desarrolla habilidades técnicas'
         text='Aquí no se trata de hacer ejercicios sin sentido. Cada reto tiene un propósito claro, preparándote para resolver problemas reales y construir proyectos que realmente importen.'
         linkText='Ver desafíos de JavaScript'
         linkHref='/challenges/javascript'
-        image='/images/default-image.png'
+        animation='JS'
         reverse
       />
     </>

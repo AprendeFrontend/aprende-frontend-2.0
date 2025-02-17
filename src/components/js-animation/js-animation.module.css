@@ -1,0 +1,22 @@
+.animation-container {
+  position: relative;
+  padding: 1rem;
+  padding-left: 0;
+  width: 100%;
+  height: 500px;
+}
+
+.screen {
+  position: absolute;
+  right: 0;
+  width: 450px;
+  height: 250px;
+  border-radius: 1rem;
+  border: 10px solid var(--secondary-200);
+  background-color: #4577f7;
+  padding: 1rem;
+  overflow: hidden;
+  animation: screen-start 8s 0 forwards;
+}
+
+/* DINO - FLAPPY - BLOCK BRICK - PONG -  BOMBERMAN - https://codepen.io/sylvaingarnot/pen/jqveXe*/
