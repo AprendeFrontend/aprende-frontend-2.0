@@ -8,12 +8,14 @@
 
 .screen {
   position: absolute;
+  isolation: isolate;
   right: 0;
   width: 450px;
   height: 250px;
   border-radius: 1rem;
   border: 10px solid var(--secondary-200);
-  background-color: #4577f7;
+  background-color: var(--primary-400);
+  background-color: var(--neutral-900);
   padding: 1rem;
   overflow: hidden;
   animation: screen-start 8s 0 forwards;
@@ -28,44 +30,146 @@
   position: absolute;
   top: 30px;
   left: -20px;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   background-color: #ffd700;
-  animation: asteroids-animation 6s linear infinite;
+  animation: player-enter-animation 2s 4s forwards linear, player-combat-animation-1 6s 4s forwards linear,
+    player-combat-animation-2 6s 10s forwards linear;
 }
 
-@keyframes asteroids-animation {
-  0% {
-    translate: 30px 30px; /* Posición inicial */
-  }
-
-  20% {
-    translate: 50px 180px; /* Baja suavemente */
-  }
-
-  40% {
-    translate: 60px 100px; /* Sube de nuevo pero sin ser brusco */
-  }
-
-  60% {
-    translate: 70px 5px; /* Sube con fluidez */
-  }
-
-  80% {
-    translate: 90px 190px; /* Baja hasta casi el fondo */
+@keyframes player-enter-animation {
+  0%,
+  10% {
+    translate: -30px;
   }
 
   100% {
-    translate: 30px 30px; /* Vuelve a la posición inicial */
+    translate: 30px 30px;
   }
 }
 
-.player-asteroids::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 100px;
-  width: 5px;
-  height: 2px;
-  background-color: #fff;
+@keyframes player-combat-animation-1 {
+  0%,
+  35% {
+    translate: 30px 30px;
+  }
+
+  40%,
+  50% {
+    translate: 60px 100px;
+  }
+
+  60%,
+  70% {
+    translate: 70px 5px;
+  }
+
+  80%,
+  90% {
+    translate: 90px 160px;
+  }
+
+  100% {
+    translate: 30px 30px;
+  }
 }
+
+@keyframes player-combat-animation-2 {
+  0%,
+  20% {
+    translate: 40px 20px;
+  }
+
+  30%,
+  40% {
+    translate: 70px 120px;
+  }
+
+  50%,
+  60% {
+    translate: 60px 20px;
+  }
+
+  70%,
+  80% {
+    translate: 80px 130px;
+  }
+
+  100% {
+    translate: 40px 20px;
+  }
+}
+
+.shot {
+  position: absolute;
+  width: 5px;
+  height: 4px;
+  background-color: #fff;
+  z-index: -1;
+  opacity: 0;
+}
+
+.shot-1 {
+  top: 64px;
+  left: 15px;
+  animation: shot 2s 5.5s linear, shot 2s 10s linear;
+}
+
+.shot-2 {
+  top: 134px;
+  left: 42px;
+  animation: shot 2s 6.5s linear, shot 2s 12.5s linear;
+}
+
+.shot-3 {
+  top: 40px;
+  left: 52px;
+  animation: shot 2s 7.5s linear;
+}
+
+.shot-4 {
+  top: 195px;
+  left: 75px;
+  animation: shot 2s 9s linear;
+}
+
+@keyframes shot {
+  0%,
+  20% {
+    translate: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 450px;
+  }
+}
+
+/* .enemy {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #f7457a;
+}
+
+.enemy-1 {
+  top: 50px;
+  right: -30px;
+  animation: enemy-move 10s 3s linear;
+}
+
+@keyframes enemy-move {
+  0%,
+  20% {
+    translate: 0;
+  }
+
+  100% {
+    opacity: 1;
+    translate: -450px;
+  }
+} */

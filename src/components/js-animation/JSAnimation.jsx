@@ -11,7 +11,11 @@ const JSAnimation = () => {
         <div className={styles['screen']}>
           <div className={styles['project-asteroids']}>
             <div className={styles['player-asteroids']}></div>
-            <div className={styles['enemys-asteroids']}></div>
+            <span className={`${styles['shot']} ${styles['shot-1']}`}></span>
+            <span className={`${styles['shot']} ${styles['shot-2']}`}></span>
+            <span className={`${styles['shot']} ${styles['shot-3']}`}></span>
+            <span className={`${styles['shot']} ${styles['shot-4']}`}></span>
+            <span className={`${styles['enemy']} ${styles['enemy-1']}`}></span>
           </div>
         </div>
 
