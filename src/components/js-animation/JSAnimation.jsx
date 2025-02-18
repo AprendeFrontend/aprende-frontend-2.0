@@ -1,21 +1,30 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Coding from '../coding/Coding';
+import FirstAsteroids from '../first-asteroids/FirstAsteroids';
 import styles from './js-animation.module.css';
 
 const JSAnimation = () => {
   const [showHtmlAnimation, setShowHtmlAnimation] = useState(true);
+  const [firstAnimation, setFirstAnimation] = useState(true);
+  const [currentAnimation, setCurrentAnimation] = useState(1);
+  const asteroidsAnimationRef = useRef(null);
+
+  useEffect(() => {
+    if (asteroidsAnimationRef.current) {
+      asteroidsAnimationRef.current.addEventListener('animationend', () => handleAsteroidsAnimationEnd(setFirstAnimation));
+    }
+
+    return () => asteroidsAnimationRef.current.removeEventListener('animationend', () => handleAsteroidsAnimationEnd(setFirstAnimation));
+  }, []);
+
   return (
     <>
       <div className={styles['animation-container']}>
         <div className={styles['screen']}>
           <div className={styles['project-asteroids']}>
-            <div className={styles['player-asteroids']}></div>
-            <span className={`${styles['shot']} ${styles['shot-1']}`}></span>
-            <span className={`${styles['shot']} ${styles['shot-2']}`}></span>
-            <span className={`${styles['shot']} ${styles['shot-3']}`}></span>
-            <span className={`${styles['shot']} ${styles['shot-4']}`}></span>
-            <span className={`${styles['enemy']} ${styles['enemy-1']}`}></span>
+            {firstAnimation && <div ref={asteroidsAnimationRef} className={styles['player-asteroids']}></div>}
+            {!firstAnimation && currentAnimation === 1 && <FirstAsteroids setCurrentAnimation={setCurrentAnimation} />}
           </div>
         </div>
 
@@ -23,6 +32,10 @@ const JSAnimation = () => {
       </div>
     </>
   );
+};
+
+const handleAsteroidsAnimationEnd = setFirstAnimation => {
+  setFirstAnimation(false);
 };
 
 export default JSAnimation;

@@ -9,32 +9,62 @@
 .screen {
   position: absolute;
   isolation: isolate;
-  right: 0;
+  right: -50px;
   width: 450px;
   height: 250px;
   border-radius: 1rem;
   border: 10px solid var(--secondary-200);
-  background-color: var(--primary-400);
   background-color: var(--neutral-900);
   padding: 1rem;
   overflow: hidden;
-  animation: screen-start 8s 0 forwards;
+  animation: screen-start 8s 4s forwards;
 }
 
-/* DINO - FLAPPY - BLOCK BRICK - PONG -  BOMBERMAN - https://codepen.io/sylvaingarnot/pen/jqveXe*/
+.screen::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0.3;
+  box-shadow: 50px 30px white, 120px 80px white, 200px 50px white, 320px 180px white, 400px 200px white, 30px 240px white, 180px 140px white,
+    270px 90px white, 350px 220px white, 430px 100px white, 20px 50px white, 60px 180px white, 90px 20px white, 140px 160px white,
+    220px 100px white, 310px 30px white, 370px 140px white, 410px 60px white, 440px 200px white, 480px 90px white, 25px 75px white,
+    55px 220px white, 75px 150px white, 95px 40px white, 135px 110px white, 165px 190px white, 195px 210px white, 225px 50px white,
+    255px 180px white, 285px 20px white, 315px 130px white, 345px 70px white, 375px 200px white, 405px 30px white, 435px 160px white,
+    465px 90px white, 495px 190px white, 15px 140px white, 45px 50px white, 85px 90px white, 125px 220px white, 165px 30px white,
+    205px 150px white, 245px 70px white, 285px 200px white, 325px 40px white, 365px 130px white, 405px 90px white, 445px 210px white,
+    /* Repetición de patrón */ 550px 30px white, 620px 80px white, 700px 50px white, 820px 180px white, 900px 200px white, 530px 240px white,
+    680px 140px white, 770px 90px white, 850px 220px white, 930px 100px white, 520px 50px white, 560px 180px white, 590px 20px white,
+    640px 160px white, 720px 100px white, 810px 30px white, 870px 140px white, 910px 60px white, 940px 200px white, 980px 90px white,
+    525px 75px white, 555px 220px white, 575px 150px white, 595px 40px white, 635px 110px white, 665px 190px white, 695px 210px white,
+    725px 50px white, 755px 180px white, 785px 20px white, 815px 130px white, 845px 70px white, 875px 200px white, 905px 30px white,
+    935px 160px white, 965px 90px white, 995px 190px white, 515px 140px white, 545px 50px white, 585px 90px white, 625px 220px white,
+    665px 30px white, 705px 150px white, 745px 70px white, 785px 200px white, 825px 40px white, 865px 130px white, 905px 90px white,
+    945px 210px white;
 
-.project-asteroids {
+  animation: moveStars 6s linear infinite;
+}
+
+@keyframes moveStars {
+  from {
+    translate: 0;
+  }
+  to {
+    /* Pasados los 500px se repite el patrón */
+    translate: -500px;
+  }
 }
 
 .player-asteroids {
   position: absolute;
-  top: 30px;
+  top: 60px;
   left: -20px;
   width: 15px;
   height: 15px;
   background-color: #ffd700;
-  animation: player-enter-animation 2s 4s forwards linear, player-combat-animation-1 6s 4s forwards linear,
-    player-combat-animation-2 6s 10s forwards linear;
+  animation: player-enter-animation 1s 2s forwards linear;
 }
 
 @keyframes player-enter-animation {
@@ -44,132 +74,90 @@
   }
 
   100% {
-    translate: 30px 30px;
+    translate: 40px;
   }
-}
-
-@keyframes player-combat-animation-1 {
-  0%,
-  35% {
-    translate: 30px 30px;
-  }
-
-  40%,
-  50% {
-    translate: 60px 100px;
-  }
-
-  60%,
-  70% {
-    translate: 70px 5px;
-  }
-
-  80%,
-  90% {
-    translate: 90px 160px;
-  }
-
-  100% {
-    translate: 30px 30px;
-  }
-}
-
-@keyframes player-combat-animation-2 {
-  0%,
-  20% {
-    translate: 40px 20px;
-  }
-
-  30%,
-  40% {
-    translate: 70px 120px;
-  }
-
-  50%,
-  60% {
-    translate: 60px 20px;
-  }
-
-  70%,
-  80% {
-    translate: 80px 130px;
-  }
-
-  100% {
-    translate: 40px 20px;
-  }
-}
-
-.shot {
-  position: absolute;
-  width: 5px;
-  height: 4px;
-  background-color: #fff;
-  z-index: -1;
-  opacity: 0;
 }
 
 .shot-1 {
-  top: 64px;
-  left: 15px;
-  animation: shot 2s 5.5s linear, shot 2s 10s linear;
+  position: absolute;
+  top: 66px;
+  left: 30px;
+  width: 4px;
+  height: 3px;
+  background-color: #fff;
+  z-index: -1;
+  opacity: 0;
+  animation: shot-animation-1 3s 3s linear;
 }
 
 .shot-2 {
-  top: 134px;
-  left: 42px;
-  animation: shot 2s 6.5s linear, shot 2s 12.5s linear;
+  position: absolute;
+  top: 146px;
+  left: 30px;
+  width: 4px;
+  height: 3px;
+  background-color: #fff;
+  z-index: -1;
+  opacity: 0;
+  animation: shot-animation-2 3s 4s linear;
+}
+
+@keyframes shot-animation-2 {
+  0% {
+    translate: 0;
+    opacity: 1;
+  }
+  100% {
+    translate: 500px;
+    opacity: 1;
+  }
 }
 
 .shot-3 {
-  top: 40px;
-  left: 52px;
-  animation: shot 2s 7.5s linear;
-}
-
-.shot-4 {
-  top: 195px;
-  left: 75px;
-  animation: shot 2s 9s linear;
-}
-
-@keyframes shot {
-  0%,
-  20% {
-    translate: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    translate: 450px;
-  }
-}
-
-/* .enemy {
   position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: #f7457a;
+  top: 106px;
+  left: 50px;
+  width: 4px;
+  height: 3px;
+  background-color: #fff;
+  z-index: -1;
+  opacity: 0;
+  animation: shot-animation-3 3s 5s linear;
+}
+
+@keyframes shot-animation-3 {
+  0% {
+    translate: 0;
+    opacity: 1;
+  }
+  100% {
+    translate: 500px;
+    opacity: 1;
+  }
+}
+
+.enemy {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: brown;
+  z-index: 1;
 }
 
 .enemy-1 {
-  top: 50px;
-  right: -30px;
-  animation: enemy-move 10s 3s linear;
+  top: 60px;
+  right: -20px;
+  box-shadow: 0 10px brown, 10px 10px brown, 10px 0 brown;
+  animation: enemy-move-animation 10s 4s linear;
 }
 
-@keyframes enemy-move {
-  0%,
-  20% {
+@keyframes enemy-move-animation {
+  from {
     translate: 0;
+    rotate: 0;
   }
-
-  100% {
-    opacity: 1;
-    translate: -450px;
+  to {
+    rotate: -720deg;
+    translate: -500px;
   }
-} */
+}
