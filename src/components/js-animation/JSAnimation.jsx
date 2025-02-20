@@ -25,6 +25,7 @@ const JSAnimation = () => {
           <div className={styles['project-asteroids']}>
             {firstAnimation && <div ref={asteroidsAnimationRef} className={styles['player-asteroids']}></div>}
             {!firstAnimation && currentAnimation === 1 && <FirstAsteroids setCurrentAnimation={setCurrentAnimation} />}
+            {/* {currentAnimation === 2 && <SecondAsteroids />} */}
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import styles from './first-asteroids.module.css';
+import styles from './second-asteroids.module.css';
 
 const SecondAsteroids = () => {
   return (
