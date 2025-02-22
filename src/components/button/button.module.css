@@ -1,6 +1,8 @@
 .button {
-  gap: 0.5rem;
-  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   border: none;
   background-color: transparent;
@@ -10,16 +12,50 @@
   font-weight: bold;
   cursor: pointer;
   transition: scale 0.05s;
+  white-space: nowrap;
 }
 
 @media screen and (width>1024px) {
   .button {
     padding: 1rem 1.25rem;
     font-size: 1.25rem;
-    margin-inline: 0;
   }
 }
 
 .button-primary {
   background-color: var(--primary-500);
+}
+
+.button-white {
+  background-color: var(--secondary-100);
+  color: var(--text-dark);
+}
+
+.button-ghost {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-left: auto;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: 2px solid var(--primary-500);
+  background-color: var(--neutral-900);
+  box-shadow: 2px 2px 6px var(--primary-400);
+  cursor: pointer;
+  transition: background-color 0.25s, scale 0.25s;
+  user-select: none;
+}
+
+.button-filter {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--primary-200);
+  box-shadow: 2px 2px 1px var(--primary-200);
+}
+
+.button-active {
+  background-color: var(--primary-500);
+  box-shadow: 2px 2px 6px var(--primary-500);
+  border: 2px solid var(--primary-500);
 }

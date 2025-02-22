@@ -1,6 +1,7 @@
 'use client';
 import { login } from '@/utils/auth';
 import { signOut, useSession } from 'next-auth/react';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import styles from './login.module.css';
@@ -8,6 +9,7 @@ import styles from './login.module.css';
 const LoginButton = () => {
   const { data: session, status } = useSession();
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const pathname = usePathname();
 
   if (status === 'loading') return <p className={styles['loading']}>Cargando...</p>;
 
@@ -30,7 +32,7 @@ const LoginButton = () => {
   return (
     <div className={styles['login-container']}>
       <FaGithub />
-      <button className={styles['login']} onClick={login}>
+      <button className={styles['login']} onClick={() => login(pathname)}>
         Iniciar Sesión
       </button>
     </div>

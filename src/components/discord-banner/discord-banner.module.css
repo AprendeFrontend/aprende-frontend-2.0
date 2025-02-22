@@ -1,0 +1,29 @@
+.discord-banner {
+  padding: 7.5rem 5rem;
+  /* Not Work */
+  background-image: var(--discord-gradient);
+  /* End Not Work */
+  background-image: linear-gradient(rgb(51 7 157) 84%, rgb(18 2 55/0.1));
+}
+
+.discord-banner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 13rem;
+}
+
+.section-title {
+  font-size: 5.625rem;
+  font-weight: var(--font-bold);
+  max-width: 42.5rem;
+  flex-shrink: 0;
+}
+
+.text {
+  font-size: 1.5625rem;
+}
+
+.rounded-image {
+  border-radius: 1rem;
+}

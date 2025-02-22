@@ -5,13 +5,10 @@ const Menu = () => {
     <nav>
       <ul className={styles['menu']}>
         <li>
-          <Link href='/challenges'>Desafíos</Link>
+          <Link href='/challenges/html-css/'>Desafíos HTML + CSS</Link>
         </li>
         <li>
-          <Link href='/challenges'>Desafíos</Link>
-        </li>
-        <li>
-          <Link href='/challenges'>Desafíos</Link>
+          <Link href='/challenges/javascript'>Desafíos JavaScript</Link>
         </li>
       </ul>
     </nav>

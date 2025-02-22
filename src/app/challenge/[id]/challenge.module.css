@@ -1,0 +1,37 @@
+.challenge-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  justify-items: center;
+  /* background-color: red; */
+  gap: 3.5rem;
+  padding: 5rem;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.challenge-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+  background-color: var(--neutral-500);
+}
+
+.challenge-image {
+}
+
+.challenge-info-container {
+  padding: 2rem;
+  background-color: var(--neutral-500);
+}
+
+.challenge-info-title {
+  margin-block: 0;
+}
+
+.challenge-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}

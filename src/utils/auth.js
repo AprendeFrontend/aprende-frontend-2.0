@@ -1,8 +1,8 @@
 import { signIn } from 'next-auth/react';
 
-const login = async () => {
+const login = async pathname => {
   const result = await signIn('github', {
-    callbackUrl: '/',
+    callbackUrl: pathname,
     redirect: false
   });
   console.log(result);

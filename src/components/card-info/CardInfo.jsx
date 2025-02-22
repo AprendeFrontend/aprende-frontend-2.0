@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import CSSAnimation from '../css-animation/CSSAnimation';
-import styles from './card-info.module.css';
 import JSAnimation from '../js-animation/JSAnimation';
+import styles from './card-info.module.css';
 const CardInfo = ({ title, text, linkHref, linkText, animation, reverse = false }) => {
   const cardInfoStyles = reverse ? `${styles['card-info']} ${styles['card-info-reverse']}` : styles['card-info'];
   return (
@@ -11,7 +11,7 @@ const CardInfo = ({ title, text, linkHref, linkText, animation, reverse = false 
         <p className={styles['card-info-text']}>{text}</p>
         <Link className={styles['card-info-link']} href={linkHref}>
           <span className={styles['card-info-link-text']}>{linkText}</span>
-          <img src='/icons/arrow-right.svg' alt='' />
+          <img src='/assets/icons/arrow-right.svg' alt='' />
         </Link>
       </div>
       {animation === 'CSS' && <CSSAnimation />}

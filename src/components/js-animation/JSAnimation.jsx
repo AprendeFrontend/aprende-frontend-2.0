@@ -15,7 +15,11 @@ const JSAnimation = () => {
       asteroidsAnimationRef.current.addEventListener('animationend', () => handleAsteroidsAnimationEnd(setFirstAnimation));
     }
 
-    return () => asteroidsAnimationRef.current.removeEventListener('animationend', () => handleAsteroidsAnimationEnd(setFirstAnimation));
+    return () => {
+      if (asteroidsAnimationRef.current) {
+        asteroidsAnimationRef.current.removeEventListener('animationend', () => handleAsteroidsAnimationEnd(setFirstAnimation));
+      }
+    };
   }, []);
 
   return (

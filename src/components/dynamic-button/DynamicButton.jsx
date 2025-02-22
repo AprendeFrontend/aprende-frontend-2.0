@@ -15,9 +15,14 @@ const DynamicButton = () => {
         </Button>
       )}
       {session && status !== 'loading' && (
-        <Link href='/challenge' className='link-primary'>
-          Ver Desafíos
-        </Link>
+        <>
+          <Link href='/challenges/html-css' className='link-primary'>
+            Ver Desafíos De HTML + CSS
+          </Link>
+          <Link href='/challenges/javascript' className='link-primary'>
+            Ver Desafíos De JavaScript
+          </Link>
+        </>
       )}
     </>
   );

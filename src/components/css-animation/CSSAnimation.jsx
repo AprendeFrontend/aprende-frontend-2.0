@@ -1,10 +1,8 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import CodingCSS from '../coding-css/CodingCSS';
-import CodingHTML from '../coding-html/CodingHTML';
+import Coding from '../coding/Coding';
 import ProjectAnimation from '../project-animation/ProjectAnimation';
 import styles from './css-animation.module.css';
-import Coding from '../coding/Coding';
 
 const CSSAnimation = () => {
   const [showHtmlAnimation, setShowHtmlAnimation] = useState(true);
@@ -13,15 +11,14 @@ const CSSAnimation = () => {
 
   useEffect(() => {
     if (projectAnimationRef.current) {
-      projectAnimationRef.current.addEventListener('animationend', () =>
-        handleProjectAnimationEnd(setShowProjectAnimation)
-      );
+      projectAnimationRef.current.addEventListener('animationend', () => handleProjectAnimationEnd(setShowProjectAnimation));
     }
 
-    return () =>
-      projectAnimationRef.current.removeEventListener('animationend', () =>
-        handleProjectAnimationEnd(setShowProjectAnimation)
-      );
+    return () => {
+      if (projectAnimationRef.current) {
+        projectAnimationRef.current.removeEventListener('animationend', () => handleProjectAnimationEnd(setShowProjectAnimation));
+      }
+    };
   }, []);
 
   return (
